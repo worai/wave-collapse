@@ -1,0 +1,23 @@
+[package]
+name = "wave-collapse"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.14.2"
+bevy_ecs_tilemap = "0.14.0"
+rand_core = "0.6"
+# bevy_rand = "0.7.1"
+bevy_rand = { version = "0.7.1", features = ["rand_chacha", "wyrand"] }
+bevy_prng = { version = "0.7.1", features = ["rand_chacha", "wyrand"] }
+rand = "0.8.5"
+iter_tools = "0.24.0"
+
+
+# Enable a small amount of optimization in the dev profile.
+[profile.dev]
+opt-level = 1
+
+# Enable a large amount of optimization in the dev profile for dependencies.
+[profile.dev.package."*"]
+opt-level = 3
